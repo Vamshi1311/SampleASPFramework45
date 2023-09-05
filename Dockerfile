@@ -7,7 +7,7 @@ COPY . .
 # restore nuget packages
 RUN nuget restore
 # use msbuild to publish project in /FramworkApp folder to c:\publish, which includes only binaries and content files (no sources)
-RUN msbuild "SampleASPFramework45.sln" /p:DeployOnBuild=true /p:PublishUrl="c:\publish" /p:WebPublishMethod=FileSystem /p:DeployDefaultTarget=WebPublish
+RUN msbuild "SampleASPFramework45.sln" /p:DeployOnBuild=true /p:PublishUrl="c:\publish" /p:WebPublishMethod=FileSystem /p:DeployDefaultTarget=WebPublish -verbosity:diagnostic
  
 # start with new base image for running asp.net apps (which contains IIS)
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8 AS runtime
