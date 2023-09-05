@@ -16,4 +16,4 @@ jobs:
    - name: checkout
      uses: actions/checkout@v3
    - name: Build Docker image
-     run: podman build -t my-docker-image . 
+     run: docker build -t my-docker-image . 
