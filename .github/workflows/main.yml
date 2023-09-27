@@ -15,5 +15,14 @@ jobs:
         with:
           msbuild-version: 'v4.5'
 
-      - name: Build Debug Configuration
-        run: msbuild SampleASPFramework45.sln /p:Configuration=Debug
+      - name: Build
+        run: msbuild SampleASPFramework45.sln /p:Configuration=Release
+
+      - name: Publish
+        run: msbuild SampleASPFramework45.sln /t:Publish /p:Configuration=Release /p:OutputPath=./artifacts
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: netframework:${{ github.run_id }}
+          path: ./artifacts
