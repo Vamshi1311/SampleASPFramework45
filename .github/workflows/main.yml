@@ -16,7 +16,7 @@ jobs:
           msbuild-version: 'v4.5'
 
       - name: Build
-        run: msbuild SampleASPFramework45.sln /p:Configuration=Release
+        run: msbuild SampleASPFramework45.sln /p:Configuration=Release --verbosity=true
 
       - name: Publish
         run: msbuild SampleASPFramework45.sln /t:Publish /p:Configuration=Release /p:OutputPath=./artifacts
