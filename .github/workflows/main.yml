@@ -16,7 +16,7 @@ jobs:
           msbuild-version: 'v4.5'
 
       - name: Build
-        run: msbuild SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile-verbosity:Diagnostic
+        run: msbuild SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile -verbosity:Diagnostic
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
