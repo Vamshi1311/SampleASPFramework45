@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: msbuild SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true -verbosity:Diagnostic
+        run: C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true -verbosity:Diagnostic
