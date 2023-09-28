@@ -7,19 +7,9 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: Windows
 
     steps:
       - uses: actions/checkout@v3
-      - uses: microsoft/setup-msbuild@v1.1
-        with:
-          msbuild-version: 'v4.5'
-
       - name: Build
-        run: msbuild SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile -verbosity:Diagnostic
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: netframework:${{ github.run_id }}
-          path: SampleASPFramework45\obj\Release\Package\PackageTmp
+        run: msbuild SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true -verbosity:Diagnostic
