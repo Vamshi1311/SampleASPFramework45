@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: 
+    runs-on: microsoft
 
     steps:
       - uses: actions/checkout@v3
