@@ -12,5 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: build and publish web app
-        shell: cmd
-        run: C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSbuild.exe SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true 
+        run: |
+          C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSbuild.exe SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true
+      
