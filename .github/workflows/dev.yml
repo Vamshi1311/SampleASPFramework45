@@ -1,0 +1,19 @@
+name: .NET Framework 4.5 Build and Deploy
+
+on:
+  push:
+    branches:
+      - develop
+    paths-ignore:
+     - "*.yml"
+
+jobs:
+  build:
+    runs-on: microsoft
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: build and publish web app
+        run: |
+          C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSbuild.exe SampleASPFramework45.sln /p:Configuration=Release /p:DeployOnBuild=true
+      
