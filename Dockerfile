@@ -14,5 +14,5 @@ FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8 AS runtime
 # set default work folder to c:\inetpub\wwwroot (IIS root)
 WORKDIR /inetpub/wwwroot
 # copy files from bin/publish in our sdk container into c:\inetpub\wwwroot
-COPY --from=build /publish. .
+COPY --from=build /publish. 
 
