@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 # set the working directory inside compilation container to c:\app
 WORKDIR /app
 # copy everything from solution dir into the c:\app
-COPY . .
+COPY . 
 # restore nuget packages
 RUN nuget restore
 # use msbuild to publish project in /FramworkApp folder to c:\publish, which includes only binaries and content files (no sources)
